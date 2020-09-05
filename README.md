@@ -20,6 +20,7 @@
 
 - Starter code taken from udacity [repository](https://github.com/udacity/fend/tree/refresh-2019/projects/weather-journal-app).
 - First of All the main helping resource was from the Udacity API course itself and by applying what we have learned.
+- [Our Mentors do a great help and efforts](https://nfpdiscussions.udacity.com/)
 - I am Getting help from a Previous Project but not a palagrism and many more links and websites, and I learned a lot through this project:
 - [Previous Project](https://github.com/conordewey3/Udacity-FED-Weather-App)
 - [CS50 Course](https://cs50.harvard.edu/web/2020/)
@@ -44,6 +45,7 @@
 - [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 - [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 - [schemecolor](https://www.schemecolor.com/in-vogue.php)
+- [Degree symbol HTML Codes](https://www.degreesymbol.net/)
 
 ## The languages used
 
