@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* gradient body */
+body {
+    background: #f23557;
+    background: linear-gradient(0deg, rgb(255, 3, 99) 0%, rgb(17, 0, 251) 100%);
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    padding-bottom: 50px;
+    padding-top: 30px;
+    height: 850px;
+}
+/* main page as a grid*/
+#app {
+    display: grid;
+    grid-template-rows: 80px 1fr 1fr 1fr;
+    justify-content: space-between;
+    height: 100vh;
+    color: #affa00;
+    justify-content: center;
+    grid-gap: 2em;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.holder {
+    text-align: center;
+}
+
+.entry {
+    background: rgba(59, 74, 107, .4);
+    padding-left: 0px;
+    padding-top: 5px;
+}
+
+#entryHolder {
+    text-align: center;
+}
+
+#date {
+    margin-top: 10px;
+    background: #FF414D;
+    box-shadow: 0px 0px 9px 4px rgb(255, 255, 255);
+    /*shadows around the icon*/
+}
+
+#temp {
+    margin-top: 10px;
+    background: #E31366;
+    box-shadow: 0px 0px 9px 4px;
+    /*shadows around the icon*/
+    box-shadow: 0px 0px 9px 4px rgb(255, 255, 255);
+    /*shadows around the icon*/
+}
+
+#tempC {
+    margin-top: 10px;
+    background: #9B116F;
+    box-shadow: 0px 0px 9px 4px rgb(255, 255, 255);
+    /*shadows around the icon*/
+}
+
+#content {
+    margin-top: 10px;
+    background: #491079;
+    box-shadow: 0px 0px 9px 4px rgb(255, 255, 255);
+    /*shadows around the icon*/
+    margin-bottom: 20px;
+}
+
+.headline {
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.title {
+    text-align: center;
+}
+
+/*  Basic Styling To Override Default For Basic HTML Elements */
+label {
+    display: block;
+    font-size: 27px;
+}
+
+input {
+    display: inline-flex;
+    height: 60px;
+    width: 320px;
+    background: #22b2da;
+    color: #3a46f0;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    padding-left: 7px;
+}
+
+button {
+    /*    z-index: 90;    /* Make sure it does not overlap */
+    width: 240px;
+    /*it's width*/
+    height: 60px;
+    background: rgba(0, 13, 60, 0.7);
+    /* Set a background color */
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    /* Increase font size */
+    color: white;
+    /* Text color */
+    border: none;
+    /* Remove borders */
+    text-align: center;
+    /*text center*/
+    border-radius: 15px;
+    /* Rounded corners */
+    opacity: 0.7;
+    /* adds transparency to the background of the button */
+    box-shadow: 0px 0px 10px 6px rgb(255, 255, 255);
+    /*box-shadow: 0px 0px 5px 1px;/*shadows around the icon*/
+    transition: opacity 0.3s;
+    /* transition */
+    outline: none;
+    /* Remove outline */
+    padding: 10px;
+    /* Some padding */
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    margin-left: 10px;
+}
+
+button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 36px;
+}
+h6 {
+    font-size: 16px;
+    margin-top: 5px;
+    color: #f0d43a;
+
+}
+
+textarea {
+    display: inline-flex;
+    background: #22b2da;
+    color: #f0d43a;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    height: 9em;
+    width: 18em;
+}
+
+/* Reset style for HTML element on active to have no border*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+/* Style for Placeholder Text*/
+::placeholder {
+    /* Firefox, Chrome, Opera */
+    color: #9c8500;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #9c8500;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #9c8500;
+    font-family: 'Oswald', sans-serif;
+}
+
+@media (max-width: 1000px) {
+    #app {
+        width: 100vw;
+    }
+}
