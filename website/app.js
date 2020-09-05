@@ -1,11 +1,5 @@
 // First of All the main helping code snippets resources are from the Udacity API course itself and by applying what we have learned.
-// and also I get help from many GitHub repositorie and outside links like w3school and MDN. I mention all in the readme file.
-
-/*
-*. This is Version 1.0 of the app please keep intouch for the future improvements.
-*.Coming soooon :) I intend to make many improvements in the second updated version 1.1 of this app.
-*.I will work on adding features for searching by city and supporting search by many language along with the zipcode and embeding the forecast logos vectors for each state of the weather, and using the Cooperative asynchronous JavaScript: Timeouts and intervals
-*/
+// and also I get help from the first submit review and our mentors on the Udacity Community and GitHub repositorie and outside links like w3school and MDN. I mention all in the readme file.
 
 /*Property of History interface allows web applications to explicitly set default scroll restoration behavior on history navigation https://developer.mozilla.org/en-US/docs/Web/API/History/scrollRestoration*/
 window.history.scrollRestoration = 'manual';
@@ -14,8 +8,9 @@ window.history.scrollRestoration = 'manual';
 
 // variable to hold the API Call link supports Multilingual support by adding &lang={lang}
 const apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?zip=';
-// The personal API Key for OpenWeatherMap API is saved in a named const variable. 
-const myApiKey = '&appid=0ccbd54b27e7df858d2cf0880f085925'; // used the technique to append the '&appid=' at the first of my key as in the API documentation
+// The personal API Key for OpenWeatherMap API is saved in a named const variable.
+// used the technique to append the '&appid=' at the first and in the last I append the &units=metric is for Celcius & if For Fahrenheit we should append &units=imperial
+const myApiKey = '&appid=0ccbd54b27e7df858d2cf0880f085925&units=metric';
 // Create a new date instance dynamically with JS
 let d = new Date();
 // increase month by 1 because of the returining data was retrieved -1 the current month
@@ -46,9 +41,9 @@ function performAction(event) {
     getWeatherApi(apiUrl, userZip, myApiKey)
         .then((data) => {
             console.log(data);
-            // as mentioned in the API Documentaion to extract temp data it's inside main list and use the array methode to get data - main.temp Temperature. Unit Default: Kelvin
+            // as mentioned in the API Documentaion to extract temp data it's inside main list and use it's Property accessors to get data list main.temp
             // Add data to POST request
-            postData('/add', { date: currentDate, temp: data.list[0].main.temp, tempC: tempC, content: userFeelings })
+            postData('/add', { date: currentDate, temp: data.list[0].main.temp, content: userFeelings })
             // just to call updateUI in the .then() method not out of it, and to be invoked after the postData() returns.
             updateUI();
         })
@@ -98,7 +93,7 @@ const getWeatherApi = async (apiUrl, userZip, myApiKey) => {
 // postData => post data to the post route 
 // Function to POST data (create a new resource) - POST method implementation
 // Async POST
-const postData = async (url = '', projectData = []) => {
+const postData = async (url = '', projectData = {}) => {
     console.log(projectData);
     const response = await fetch(url, {
         method: 'POST',
@@ -127,10 +122,9 @@ const updateUI = async () => {
     const request = await fetch('/all');
     try {
         const allData = await request.json();
-        document.querySelector('#date').innerHTML = `Date format M-D-Y: ---> ${allData[0].date}`;
-        document.querySelector('#temp').innerHTML = `Temperature in Kelvin: ---> ${allData[0].temp} &#8490;`;
-        document.querySelector('#tempC').innerHTML = `Temperature in Celsius: ---> ${Math.round(Number(allData[0].temp) - 273.15)} &#x2103;`;
-        document.querySelector('#content').innerHTML = `It feels:  ${allData[0].content}`;
+        document.querySelector('#date').innerHTML = `Date format M-D-Y: ---> ${allData.date}`;
+        document.querySelector('#temp').innerHTML = `Temperature in Celsius: ---> ${Math.round(Number(allData.temp))} &#x2103;`;
+        document.querySelector('#content').innerHTML = `It feels:  ${allData.content}`;
     } catch (error) {
         console.log("updateUI", error);
         return false;
