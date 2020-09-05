@@ -1,5 +1,5 @@
-// Setup empty JS object to act as endpoint for all app data as an array
-let projectData = [];
+// Setup empty JS object to act as endpoint for all app data
+projectData = {};
 
 //Express to run server and routes
 const express = require('express');
@@ -37,20 +37,8 @@ function sendData(req, res) {
     // respond with JS object "projectdata" when a GET request is made to the homepage
     //line of code that will return our JavaScript object when the GET request is made.
     res.send(projectData);
-    // point to the projectData array to hold the coming back data as an array
-    projectData = [];
     //console.log(projectData);
 };
-
-/*.
-//Or even with an arrow function like this:
-app.get('/all', (req, res) => {
-    //line of code that will return our JavaScript object when the GET request is made.
-    res.send(projectData);
-    // projectData as an empty array to hold the coming back data
-    projectData = [];
-});
-*/
 
 /*.The variable projectData now acts as the endpoint for all our app data.Later we will work on how to POST data to the app endpoint.*/
 
@@ -58,10 +46,10 @@ app.get('/all', (req, res) => {
 app.post('/add', addData);
 //In the callback function, add the data received from req.body
 function addData(req, res) {
-    // a variable to hold all the requested data with the dot notation to be pushed to the projectdata array 
+    // a variable to hold all the requested data with the dot notation
     let newData = req.body;
-    // projectData as an array we will use push or unshift to add data to it
-    projectData.push(newData);
+    //Since projectData is an object, push is not a method for the object.
+    projectData = newData;
     // consol log on server screen projectdata
     console.log({ projectData });
     // send the response of requested to projectdata
