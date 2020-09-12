@@ -10,7 +10,7 @@ window.history.scrollRestoration = 'manual';
 const apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?zip=';
 // The personal API Key for OpenWeatherMap API is saved in a named const variable.
 // used the technique to append the '&appid=' at the first and in the last I append the &units=metric is for Celcius & if For Fahrenheit we should append &units=imperial
-const myApiKey = '&appid=0ccbd54b27e7df858d2cf0880f085925&units=metric';
+const myApiKey = '&appid=555555555555555&units=metric';
 // Create a new date instance dynamically with JS
 let d = new Date();
 // increase month by 1 because of the returining data was retrieved -1 the current month
